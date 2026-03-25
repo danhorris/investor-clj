@@ -1,0 +1,34 @@
+# Calva/VS Code
+.calva/mcp-server/port
+.calva/repl.calva-repl
+.calva/output-window/
+.vscode/.cpcache
+
+# Clojure LSP cache files
+.lsp/.cache
+.lsp/sqlite.*.db
+
+.calva/
+.clj-kondo/.cache
+
+# Leiningen files
+.lein-failures
+.lein-repl-history
+.lein-* 
+
+# Project build artifacts and dependencies
+.cpcache
+.classpath
+.project
+.vs/
+*.nupkg
+*.suo
+*.user
+/cljs-test-runner-out
+bin/
+obj/
+target/
+
+# Portal (if used)
+.portal/
+
