@@ -1,0 +1,5 @@
+[{:type :ratio :name "AE38/GD41" :a "AE38" :b "GD41" :limit 1.10}
+ {:type :price :symbol "AE38D" :limit 77.1}
+ {:type :price :symbol "GD41D" :limit 70.5}
+ {:type :price :symbol "GD46D" :limit 67.0}]
+
