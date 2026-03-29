@@ -42,7 +42,7 @@
 
 (defn monitor-all! [alerts interval-sec]
   (while true
-    (let [prices bonds/all-prices]
+    (let [prices bonds/all-prices!]
       (run! #(process-alert! prices %) alerts))
     (Thread/sleep (* interval-sec 1000))))
 
