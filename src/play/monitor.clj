@@ -10,9 +10,14 @@
     (> (bonds/bond-ratio! prices (:a alert) (:b alert))
        (:limit alert))
 
-    :price
-    (< (bonds/bond-price! prices (:symbol alert))
+    :price-under
+    (< (bonds/bond-price-value! prices (:symbol alert) :px_bid)
        (:limit alert))
+
+    :price-above
+    (> (bonds/bond-price-value! prices (:symbol alert) :px_ask)
+       (:limit alert))
+
     false))
 
 (defn alert->message [alert prices]
@@ -22,8 +27,12 @@
     (let [r (bonds/bond-ratio! prices (:a alert) (:b alert))]
       (format "🚨 %s ratio=%.3f" (:name alert) r))
 
-    :price
-    (let [p (bonds/bond-price! prices (:symbol alert))]
+    :price-under
+    (let [p (bonds/bond-price-value! prices (:symbol alert) :px_bid)]
+      (format "🚨 %s price=%.2f" (:symbol alert) p))
+
+    :price-above
+    (let [p (bonds/bond-price-value! prices (:symbol alert) :px_ask)]
       (format "🚨 %s price=%.2f" (:symbol alert) p))))
 
 (defn process-alert! [prices alert]
